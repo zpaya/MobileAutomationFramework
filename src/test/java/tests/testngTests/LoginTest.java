@@ -25,12 +25,14 @@ public class LoginTest extends CreateSession {
 	 */
 	@Parameters({"os"})
 	@BeforeMethod
-	public void instantiateHelpers(String invokeDriver){
+	public void instantiateHelpers(String invokeDriver) throws Exception {
 		
 		userName = localeConfigProp.getProperty("userName");
 		password = localeConfigProp.getProperty("password");
 		
 		if (invokeDriver.equalsIgnoreCase("android")){
+			createDriver(invokeDriver, getClass().getEnclosingMethod(), "slideshareAndroidAppPath"
+							,"net.slideshare.mobile","net.slideshare.mobile.ui.SplashActivity");
 			loginCoreLogic = new AndroidLoginCoreLogic(driver);
 		}																		         
 		else if (invokeDriver.equalsIgnoreCase("iOS")){
