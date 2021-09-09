@@ -1,10 +1,9 @@
 package cucumberIntegrationTests.stepDefinitions.common;
 
-import cucumber.api.java.en.Given;
 import cucumberIntegrationTests.CreateSessionCucumber;
-import cucumberIntegrationTests.CucumberRunnerUtil;
 import cucumberIntegrationTests.screens.android.AndroidLoginScreen;
 import cucumberIntegrationTests.screens.iOS.IOSLoginScreen;
+import io.cucumber.java.en.Given;
 import org.openqa.selenium.WebDriver;
 
 public class BaseSteps {

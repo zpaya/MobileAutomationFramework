@@ -1,12 +1,12 @@
 package cucumberIntegrationTests.stepDefinitions.common;
 
 
-import cucumber.api.java.en.And;
-import cucumber.api.java.en.Then;
-import cucumber.api.java.en.When;
 import cucumberIntegrationTests.CreateSessionCucumber;
 import cucumberIntegrationTests.screens.android.AndroidLoginScreen;
 import cucumberIntegrationTests.screens.iOS.IOSLoginScreen;
+import io.cucumber.java.en.And;
+import io.cucumber.java.en.Then;
+import io.cucumber.java.en.When;
 import org.openqa.selenium.WebDriver;
 
 import java.util.Properties;

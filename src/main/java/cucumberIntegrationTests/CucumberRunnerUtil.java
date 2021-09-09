@@ -1,9 +1,10 @@
 package cucumberIntegrationTests;
 
-import cucumber.api.CucumberOptions;
-import cucumber.api.junit.Cucumber;
-import cucumber.api.testng.CucumberFeatureWrapper;
-import cucumber.api.testng.TestNGCucumberRunner;
+import io.cucumber.junit.Cucumber;
+import io.cucumber.testng.CucumberOptions;
+import io.cucumber.testng.FeatureWrapper;
+import io.cucumber.testng.PickleWrapper;
+import io.cucumber.testng.TestNGCucumberRunner;
 import org.junit.runner.RunWith;
 import org.testng.annotations.*;
 
@@ -44,15 +45,15 @@ public class CucumberRunnerUtil {
     }
 
 
-    @Test(groups = "cucumber", description = "Runs Cucumber Feature",dataProvider = "features" )
-    public void feature(CucumberFeatureWrapper cucumberFeature) {
-        testNGCucumberRunner.runCucumber(cucumberFeature.getCucumberFeature());
+    @Test(groups = "cucumber", description = "Run Cucumber Scenario", dataProvider = "scenarios")
+    public void scenario(PickleWrapper pickle, FeatureWrapper cucumberFeature) {
+        testNGCucumberRunner.runScenario(pickle.getPickle());
     }
 
 
     @DataProvider
     public Object[][] features() {
-        return testNGCucumberRunner.provideFeatures();
+        return testNGCucumberRunner.provideScenarios();
     }
 
 
